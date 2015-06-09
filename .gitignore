@@ -1,3 +1,4 @@
+<<<<<<< 22050b01eef5db439e90b586284647615b93f885
 # package src/pkg archives, downloaded sources
 *.tar*
 *.tgz
@@ -13,3 +14,6 @@
 # backup files
 *~
 *.bak
+=======
+*.tar.gz
+>>>>>>> initial import

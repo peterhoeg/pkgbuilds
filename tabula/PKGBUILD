@@ -1,0 +1,29 @@
+# Maintainer: Peter Hoeg <first name at last name dot com>
+
+pkgname=tabula
+pkgver=1.0.0
+pkgrel=1
+pkgdesc="A PDF to CSV converter"
+arch=("any")
+url="http://tabula.technology"
+license=('LPPL')
+depends=('java-runtime-common')
+# install=koma-script.install
+makedepends=('unzip')
+source=("https://github.com/tabulapdf/${pkgname}/releases/download/v${pkgver}/${pkgname}-jar-${pkgver}.zip"
+        "${pkgname}.sh")
+sha1sums=('432927b1f9e52e407912b0b2692c579144ea2b89' 'SKIP')
+# noextract=("koma-script-${_revision}.zip")
+
+package() {
+  cd "$srcdir/"
+
+  install -m755 -d "$pkgdir/usr/share/doc/${pkgname}"
+  cp -R ${pkgname}/*.txt "$pkgdir/usr/share/doc/${pkgname}"
+
+  install -m755 -d "$pkgdir/usr/share/java/${pkgname}"
+  cp -R ${pkgname}/*.jar "$pkgdir/usr/share/java/${pkgname}"
+
+  install -m755 -d "$pkgdir/usr/bin"
+  install -m755 ${pkgname}.sh "$pkgdir/usr/bin/${pkgname}"
+}

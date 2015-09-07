@@ -1,0 +1,16 @@
+pkgbase = tabula
+	pkgdesc = A PDF to CSV converter
+	pkgver = 1.0.0
+	pkgrel = 1
+	url = http://tabula.technology
+	arch = any
+	license = LPPL
+	makedepends = unzip
+	depends = java-runtime-common
+	source = https://github.com/tabulapdf/tabula/releases/download/v1.0.0/tabula-jar-1.0.0.zip
+	source = tabula.sh
+	sha1sums = 432927b1f9e52e407912b0b2692c579144ea2b89
+	sha1sums = SKIP
+
+pkgname = tabula
+

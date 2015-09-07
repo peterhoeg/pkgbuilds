@@ -1,0 +1,39 @@
+# Maintainer: Peter Hoeg <first name at last name dot com>
+
+pkgname=auto-rotate
+pkgver=0.0.1
+pkgrel=1
+pkgdesc="Automatically rotate the monitor on machines with accelerometers"
+arch=("any")
+url="http://github.com/peterhoeg/${pkgname}"
+license=('GPL')
+depends=('dbus' 'iio-sensor-proxy' 'ruby-dbus' 'xorg-xrandr')
+makedepends=('unzip')
+# source=("${url}/download/releases/v${pkgver}/${pkgname}-${pkgver}.zip")
+source=("${pkgname}-${pkgver}.zip")
+sha1sums=('SKIP')
+
+build() { 
+  echo $(pwd)
+}
+
+package() {
+  cd "$srcdir/"
+
+  install -Dm644 auto-rotate.service "$pkgdir/usr/lib/systemd/user/auto-rotate.service"
+
+  install -Dm755 auto-rotate.rb "$pkgdir/usr/bin/auto-rotate"
+}
+
+# package() {
+#   cd "$srcdir/"
+
+#   install -m755 -d "$pkgdir/usr/share/doc/${pkgname}"
+#   cp -R ${pkgname}/*.txt "$pkgdir/usr/share/doc/${pkgname}"
+
+#   install -m755 -d "$pkgdir/usr/share/java/${pkgname}"
+#   cp -R ${pkgname}/*.jar "$pkgdir/usr/share/java/${pkgname}"
+
+#   install -m755 -d "$pkgdir/usr/bin"
+#   install -m755 ${pkgname}.sh "$pkgdir/usr/bin/${pkgname}"
+# }

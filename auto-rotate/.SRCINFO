@@ -1,0 +1,17 @@
+pkgbase = auto-rotate
+	pkgdesc = Automatically rotate the monitor on machines with accelerometers
+	pkgver = 0.0.1
+	pkgrel = 1
+	url = http://github.com/peterhoeg/auto-rotate
+	arch = any
+	license = GPL
+	makedepends = unzip
+	depends = dbus
+	depends = iio-sensor-proxy
+	depends = ruby-dbus
+	depends = xorg-xrandr
+	source = auto-rotate-0.0.1.zip
+	sha1sums = SKIP
+
+pkgname = auto-rotate
+

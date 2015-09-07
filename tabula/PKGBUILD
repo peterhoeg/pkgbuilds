@@ -19,11 +19,10 @@ package() {
   cd "$srcdir/"
 
   install -m755 -d "$pkgdir/usr/share/doc/${pkgname}"
-  cp -R ${pkgname}/*.txt "$pkgdir/usr/share/doc/${pkgname}"
+  install -m644 ${pkgname}/*.txt "$pkgdir/usr/share/doc/${pkgname}"
 
   install -m755 -d "$pkgdir/usr/share/java/${pkgname}"
-  cp -R ${pkgname}/*.jar "$pkgdir/usr/share/java/${pkgname}"
+  install -m644 ${pkgname}/*.jar "$pkgdir/usr/share/java/${pkgname}"
 
-  install -m755 -d "$pkgdir/usr/bin"
-  install -m755 ${pkgname}.sh "$pkgdir/usr/bin/${pkgname}"
+  install -Dm755 ${pkgname}.sh "$pkgdir/usr/bin/${pkgname}"
 }

@@ -19,7 +19,7 @@ build() {
 
 package() {
   cd "${srcdir}/${pkgname}"
-  install -Dm755 cfget "$pkgdir/usr/bin/cfget"
+  install -Dm755 cfget   "$pkgdir/usr/bin/cfget"
   install -Dm644 cfget.1 "$pkgdir/usr/share/man/man1/cfget.1"
 }
 

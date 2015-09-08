@@ -1,7 +1,7 @@
 pkgbase = texlive-moderncv
 	pkgdesc = A modern curriculum vitae class.
 	pkgver = 2.0.0
-	pkgrel = 3
+	pkgrel = 4
 	url = http://www.ctan.org/pkg/moderncv/
 	install = texlive.install
 	arch = any
@@ -9,7 +9,7 @@ pkgbase = texlive-moderncv
 	depends = texlive-core
 	depends = texlive-latexextra
 	depends = texlive-fontsextra
-	source = moderncv-2.0.0-3.zip::http://mirror.ctan.org/macros/latex/contrib/moderncv.zip
+	source = moderncv-2.0.0.zip::http://mirror.ctan.org/macros/latex/contrib/moderncv.zip
 	sha256sums = 1519b47d84e67d0f39756bababd5f09c3403429f2cc59f0a7f9ecdbdebee192d
 
 pkgname = texlive-moderncv

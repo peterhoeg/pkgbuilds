@@ -1,0 +1,11 @@
+pkgbase = cabaretstage
+	pkgdesc = A PDF form fillter
+	pkgver = 6.0.2
+	pkgrel = 1
+	url = https://www.cabaret-solutions.com/node/547
+	arch = any
+	license = GPK
+	depends = java-runtime-common
+
+pkgname = cabaretstage
+

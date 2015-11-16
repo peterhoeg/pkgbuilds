@@ -1,0 +1,26 @@
+# Maintainer: Peter Hoeg <first name at last name dot com>
+
+pkgname=cabaretstage
+pkgver=6.0.2
+pkgrel=1
+pkgdesc="A PDF form fillter"
+arch=("any")
+url="https://www.cabaret-solutions.com/node/547"
+license=('GPK')
+depends=('java-runtime-common')
+sources=("cabaretstage_${pkgver}_linux-64bit.tar.gz::https://www.cabaret-solutions.com/system/files/cabaretstage_${pkgver}_linux-64bit.tar_.gz"
+         ${pkgname})
+
+package() {
+  _dest="$pkgdir/opt/${pkgname}"
+  cd "$srcdir/${pkgname}-${pkgver}"
+
+  mkdir -p "${_dest}"
+  mkdir -p "${pkgdir}/usr/bin"
+
+  install -m755 ${pkgname} ${pkgdir}/usr/bin/${pkgname}
+
+  cp -r * ${_dest}
+  rm -rf ${_dest}/certificates
+  mkdir -p ${_dest}/scripts/js/{global,search}
+}

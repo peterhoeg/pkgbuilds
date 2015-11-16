@@ -1,0 +1,28 @@
+# Maintainer: Peter Hoeg <firstname at lastname dot com>
+
+pkgname=pam_tmpdir
+pkgver=0.0.9
+pkgrel=1
+pkgdesc='PAM tmpdir'
+arch=('i686' 'x86_64')
+url='https://www.nemid.nu'
+license=('GPL')
+depends=('pam')
+source=("${pkgname}::bzr+lp:ubuntu/wily/pam-tmpdir")
+md5sums=('SKIP')
+
+build() {
+  cd "${srcdir}/${pkgname}"
+  ./configure --prefix=$pkgdir/usr
+  make
+}
+
+package() {
+  cd "${srcdir}/${pkgname}"
+  make install
+
+  mkdir -p ${pkgdir}/usr/share/doc/${pkgname}
+  install -m644 -t ${pkgdir}/usr/share/doc/${pkgname} README
+}
+
+# vim:set ts=2 sw=2 et:

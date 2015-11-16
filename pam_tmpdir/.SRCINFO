@@ -1,0 +1,14 @@
+pkgbase = pam_tmpdir
+	pkgdesc = PAM tmpdir
+	pkgver = 0.0.9
+	pkgrel = 1
+	url = https://www.nemid.nu
+	arch = i686
+	arch = x86_64
+	license = GPL
+	depends = pam
+	source = pam_tmpdir::bzr+lp:ubuntu/wily/pam-tmpdir
+	md5sums = SKIP
+
+pkgname = pam_tmpdir
+

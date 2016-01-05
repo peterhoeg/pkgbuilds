@@ -4,19 +4,19 @@
 
 usage()
 {
-	cat <<- _EOF_
-		Usage: ./aurpublish [OPTIONS] PACKAGE
-		Push a subtree to the AUR
+  cat <<- _EOF_
+    Usage: ./aurpublish [OPTIONS] PACKAGE
+    Push a subtree to the AUR
 
-		OPTIONS
-		    -p, --pull      instead of publishing, pull changes from the AUR.
-		                      Can import packages into a new subtree.
-		    -s, --speedup   speedup future publishing by recording the subtree
-		                      history during a push. This creates a merge commit
-		                      and a second copy of all commits in the subtree.
-		                      For more details, see the "--rejoin" option in git
-		                      subtree.
-		    -h, --help      show this usage message
+    OPTIONS
+        -p, --pull      instead of publishing, pull changes from the AUR.
+                          Can import packages into a new subtree.
+        -s, --speedup   speedup future publishing by recording the subtree
+                          history during a push. This creates a merge commit
+                          and a second copy of all commits in the subtree.
+                          For more details, see the "--rejoin" option in git
+                          subtree.
+        -h, --help      show this usage message
 _EOF_
 }
 
@@ -73,4 +73,4 @@ fi
 if [[ "${speedup}" = "1" ]]; then
     git subtree split -P "${package}" --rejoin
 fi
-git subtree push -P "${package}" aur:${package}.git master
+git subtree push --force -P "${package}" aur:${package}.git master

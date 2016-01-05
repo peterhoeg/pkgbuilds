@@ -28,49 +28,49 @@ is_package_in_git()
 
 #### Do the great option check
 
-if [[ $# -eq 0 ]]; then
-    echo "error: No arguments passed. aurpublish needs a package to upload."
-    exit 1
+if [[ "$#" -eq 0 ]]; then
+  echo "error: No arguments passed. aurpublish needs a package to upload."
+  exit 1
 fi
 while [[ "${1}" != "" ]]; do
-    case ${1} in
-        -h|--help)
-            usage
-            exit
-            ;;
-        -p|--pull)
-            pull_subtree=1
-            shift
-            package="${1}"
-            ;;
-        -s|--speedup)
-            speedup=1
-            ;;
-        *)
-            if is_package_in_git ${1%/}; then
-                package="${1%/}"
-            else
-                echo "${0}: unrecognized package '${1}'"
-                echo "Try '${0} --help' for more information."
-                exit 1
-            fi
-    esac
-    shift
+  case ${1} in
+    -h|--help)
+      usage
+      exit
+      ;;
+    -p|--pull)
+      pull_subtree=1
+      shift
+      package="${1}"
+      ;;
+    -s|--speedup)
+      speedup=1
+      ;;
+    *)
+      if is_package_in_git ${1%/}; then
+        package="${1%/}"
+      else
+        echo "${0}: unrecognized package '${1}'"
+        echo "Try '${0} --help' for more information."
+        exit 1
+      fi
+  esac
+  shift
 done
 
 #### MAIN
 
 if [[ "${pull_subtree}" = "1" ]]; then
-    # test if prefix already exists
-    if is_package_in_git ${package}; then
-        git subtree pull -P "${package}" aur:${package}.git master -m "Merge subtree '${package}'"
-    else
-        git subtree add -P "${package}" aur:${package}.git master
-    fi
-    exit 0
+  # test if prefix already exists
+  if is_package_in_git ${package}; then
+    git subtree pull -P "${package}" aur:${package}.git master -m "Merge subtree '${package}'"
+  else
+    git subtree add -P "${package}" aur:${package}.git master
+  fi
+  exit 0
 fi
 
 if [[ "${speedup}" = "1" ]]; then
-    git subtree split -P "${package}" --rejoin
+  git subtree split -P "${package}" --rejoin
 fi
-git subtree push --force -P "${package}" aur:${package}.git master
+git subtree push -P "${package}" aur:${package}.git master

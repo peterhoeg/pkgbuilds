@@ -2,7 +2,7 @@
 
 pkgname=appc
 pkgver=0.7.4
-pkgrel=0
+pkgrel=1
 pkgdesc="App container tools"
 arch=('x86_64')
 url="https://github.com/appc/spec"

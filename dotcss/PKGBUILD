@@ -1,9 +1,9 @@
-# Maintainer: Arnoud Willemsen <mail at lynthium dot com>
+# Maintainer: Peter Hoeg <first name at last name dot com>
 
 _pkgbase=dotcss
 pkgname=${_pkgbase}-git
 pkgver=2.2.0.r37.b016b1f
-pkgrel=1
+pkgrel=2
 pkgdesc="Server component for injecting CSS into chrom(e|ium)"
 arch=('any')
 url="https://github.com/stewart/${_pkgbase}"

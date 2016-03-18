@@ -2,7 +2,7 @@
 
 _pkgbase=dynamic-colors
 pkgname=${_pkgbase}-git
-pkgver=r27.8c537d1
+pkgver=r31.b15920e
 pkgrel=1
 pkgdesc='Dynamic colors in Bash and ZSH'
 arch=('any')

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 old_commit_msg="$(cat ${1})"
 echo -n "" > "${1}"

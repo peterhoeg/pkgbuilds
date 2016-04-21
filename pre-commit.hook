@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # nuke extraneous whitespace from orbit
 if git rev-parse --verify HEAD >/dev/null 2>&1
